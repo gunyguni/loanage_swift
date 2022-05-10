@@ -12,9 +12,15 @@ class ViewController: UIViewController {
     //MARK: - Properties
     
     private var collectionView: UICollectionView?
+    let characters = [Character(nickname: "거니버니", level: 1440, job: "소서리스"),
+                      Character(nickname: "헬루", level: 1610, job: "디스트로이어"),
+                      Character(nickname: "빼꼼이", level: 408, job: "창술사")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "캐릭터 선택창"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         let flowlayout = UICollectionViewFlowLayout()
         flowlayout.itemSize = CGSize(width: (view.frame.width - 20 - 40)/2, height: (view.frame.width - 20 - 40)/2)
@@ -27,6 +33,7 @@ class ViewController: UIViewController {
         
         view.addSubview(collectionView)
         view.backgroundColor = .black
+        
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -43,15 +50,24 @@ class ViewController: UIViewController {
 }
 
 
+//MARK: - UICollectionView Delegates
+
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return characters.count + 1
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.cellId, for: indexPath) as! CharacterCVCell
-    
+        
+        if indexPath.row < characters.count {
+            cell.configure(nickname: characters[indexPath.row].nickname, lvl: characters[indexPath.row].level, job: characters[indexPath.row].job)
+
+        } else {
+            cell.lastCell()
+        }
+        
         return cell
     }
     
@@ -59,15 +75,14 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let rootVC = DetailedViewController()
-        
-        let navVC = UINavigationController(rootViewController: rootVC)
-        navVC.modalPresentationStyle = .fullScreen
-        present(navVC, animated: true)
+        let vc = DetailedViewController()
+        vc.view.backgroundColor = .white
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 
+//MARK: - UICollectionView Flow layout
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
 //    // cell의 width, height를 정하기

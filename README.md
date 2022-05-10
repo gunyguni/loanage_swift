@@ -1,11 +1,12 @@
 좌충우돌 Swift 첫 프로젝트... 내가 하고자 하는 것
-**1. RxSwift로 MVVM패턴을 적용해보자. 디자인 패턴은 앱 개발에 매우 중요하다!
-2. 스토리보드를 쓰지 말고, 코드로 UI를 전부 짜보자! 처음 배울 때 이것저것 해보는 게 중요!**
+
+**1. RxSwift로 MVVM패턴을 적용해보자. 디자인 패턴은 앱 개발에 매우 중요하다!**
+**2. 스토리보드를 쓰지 말고, 코드로 UI를 전부 짜보자! 처음 배울 때 이것저것 해보는 게 중요!**
 3. 만약 시간이 된다면 Realm 대신 node.js로 간단한 서버를 만들어보고 싶다. 하지만 여기에 집중하면 yak shaving이 되니까, 이 프로젝트를 통해 하고 싶은 것을 명확히 하자!
 
 --- 
 
-#To do
+# To do
 ## Initial Screen
 1. Navigation Controller programmatically
 - Navigation controller를 코드로 추가한다.
