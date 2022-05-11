@@ -18,6 +18,8 @@
 		F7A4EFF3282A4E6700B9D156 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4EFF2282A4E6700B9D156 /* DetailedViewController.swift */; };
 		F7A4EFF5282A619200B9D156 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4EFF4282A619200B9D156 /* CharacterModel.swift */; };
 		F7A4EFF8282A61F600B9D156 /* CharacterlData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4EFF7282A61F600B9D156 /* CharacterlData.swift */; };
+		F7A4EFFA282AB69400B9D156 /* NewCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4EFF9282AB69400B9D156 /* NewCharacterViewController.swift */; };
+		F7A4EFFC282BB93400B9D156 /* UIColorFromHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4EFFB282BB93400B9D156 /* UIColorFromHex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		F7A4EFF2282A4E6700B9D156 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		F7A4EFF4282A619200B9D156 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		F7A4EFF7282A61F600B9D156 /* CharacterlData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterlData.swift; sourceTree = "<group>"; };
+		F7A4EFF9282AB69400B9D156 /* NewCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCharacterViewController.swift; sourceTree = "<group>"; };
+		F7A4EFFB282BB93400B9D156 /* UIColorFromHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFromHex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +70,11 @@
 		F7A4EFD9282676A300B9D156 /* loanage */ = {
 			isa = PBXGroup;
 			children = (
+				F7A4EFFB282BB93400B9D156 /* UIColorFromHex.swift */,
 				F7A4EFDA282676A300B9D156 /* AppDelegate.swift */,
 				F7A4EFDC282676A300B9D156 /* SceneDelegate.swift */,
 				F7A4EFDE282676A300B9D156 /* ViewController.swift */,
+				F7A4EFF9282AB69400B9D156 /* NewCharacterViewController.swift */,
 				F7A4EFF2282A4E6700B9D156 /* DetailedViewController.swift */,
 				F7A4EFF0282A374A00B9D156 /* constants.swift */,
 				F7A4EFEE282A372200B9D156 /* CharacterCVCell.swift */,
@@ -164,11 +170,13 @@
 				F7A4EFDF282676A300B9D156 /* ViewController.swift in Sources */,
 				F7A4EFDB282676A300B9D156 /* AppDelegate.swift in Sources */,
 				F7A4EFF3282A4E6700B9D156 /* DetailedViewController.swift in Sources */,
+				F7A4EFFA282AB69400B9D156 /* NewCharacterViewController.swift in Sources */,
 				F7A4EFEF282A372200B9D156 /* CharacterCVCell.swift in Sources */,
 				F7A4EFF1282A374A00B9D156 /* constants.swift in Sources */,
 				F7A4EFF5282A619200B9D156 /* CharacterModel.swift in Sources */,
 				F7A4EFDD282676A300B9D156 /* SceneDelegate.swift in Sources */,
 				F7A4EFF8282A61F600B9D156 /* CharacterlData.swift in Sources */,
+				F7A4EFFC282BB93400B9D156 /* UIColorFromHex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

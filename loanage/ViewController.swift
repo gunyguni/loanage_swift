@@ -4,6 +4,11 @@
 //
 //  Created by Keon Hee Park on 2022/05/07.
 //
+// Color Palette (https://colorhunt.co/palette/000000323232ff1e56ffac41)
+// #000000 <- Background Color
+// #323232 <- Primary Color (grey)
+// #FF1E56 <- Secondary Color (살짝 redish?)
+// #FFAC41 <- Just In Case
 
 import UIKit
 
@@ -34,7 +39,6 @@ class ViewController: UIViewController {
         view.addSubview(collectionView)
         view.backgroundColor = .black
         
-        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -43,6 +47,7 @@ class ViewController: UIViewController {
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
         collectionView.backgroundColor = .black
+        
         
         collectionView.register(CharacterCVCell.self, forCellWithReuseIdentifier: K.cellId)
     }
@@ -57,7 +62,6 @@ extension ViewController: UICollectionViewDataSource {
         return characters.count + 1
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.cellId, for: indexPath) as! CharacterCVCell
         
@@ -70,14 +74,18 @@ extension ViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailedViewController()
-        vc.view.backgroundColor = .white
-        navigationController?.pushViewController(vc, animated: true)
+        if indexPath.row < characters.count {
+            let detailVC = DetailedViewController(selectedNickname: characters[indexPath.row].nickname)
+            navigationController?.pushViewController(detailVC, animated: true)
+        } else {
+            let newCharacterVC = NewCharacterViewController()
+            present(UINavigationController(rootViewController: newCharacterVC), animated: true)
+        }
+        
     }
 }
 
