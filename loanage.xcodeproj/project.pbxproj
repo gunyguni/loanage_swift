@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B4CC56B460E45BDC0F4698A /* Pods_loanage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1413804CA99BE3356B2C30D7 /* Pods_loanage.framework */; };
 		F7A4EFDB282676A300B9D156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4EFDA282676A300B9D156 /* AppDelegate.swift */; };
 		F7A4EFDD282676A300B9D156 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4EFDC282676A300B9D156 /* SceneDelegate.swift */; };
 		F7A4EFDF282676A300B9D156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A4EFDE282676A300B9D156 /* ViewController.swift */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04421C1505DB4B17F3EAD04E /* Pods-loanage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loanage.release.xcconfig"; path = "Target Support Files/Pods-loanage/Pods-loanage.release.xcconfig"; sourceTree = "<group>"; };
+		1413804CA99BE3356B2C30D7 /* Pods_loanage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_loanage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4773FEB32412E23875948465 /* Pods-loanage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loanage.debug.xcconfig"; path = "Target Support Files/Pods-loanage/Pods-loanage.debug.xcconfig"; sourceTree = "<group>"; };
 		F7A4EFD7282676A300B9D156 /* loanage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loanage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A4EFDA282676A300B9D156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7A4EFDC282676A300B9D156 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4CC56B460E45BDC0F4698A /* Pods_loanage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04CAC8D447506380318232D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4773FEB32412E23875948465 /* Pods-loanage.debug.xcconfig */,
+				04421C1505DB4B17F3EAD04E /* Pods-loanage.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		712B1A9367BEF6604F27333B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1413804CA99BE3356B2C30D7 /* Pods_loanage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7A4EFCE282676A300B9D156 = {
 			isa = PBXGroup;
 			children = (
 				F7A4EFD9282676A300B9D156 /* loanage */,
 				F7A4EFD8282676A300B9D156 /* Products */,
+				04CAC8D447506380318232D3 /* Pods */,
+				712B1A9367BEF6604F27333B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7A4EFEB282676A400B9D156 /* Build configuration list for PBXNativeTarget "loanage" */;
 			buildPhases = (
+				D199F88B726A9DD454379F71 /* [CP] Check Pods Manifest.lock */,
 				F7A4EFD3282676A300B9D156 /* Sources */,
 				F7A4EFD4282676A300B9D156 /* Frameworks */,
 				F7A4EFD5282676A300B9D156 /* Resources */,
+				E0601067A942F48393D16BFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +188,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D199F88B726A9DD454379F71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-loanage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0601067A942F48393D16BFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-loanage/Pods-loanage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-loanage/Pods-loanage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-loanage/Pods-loanage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7A4EFD3282676A300B9D156 /* Sources */ = {
@@ -318,6 +387,7 @@
 		};
 		F7A4EFEC282676A400B9D156 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4773FEB32412E23875948465 /* Pods-loanage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -346,6 +416,7 @@
 		};
 		F7A4EFED282676A400B9D156 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04421C1505DB4B17F3EAD04E /* Pods-loanage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
